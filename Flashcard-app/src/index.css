@@ -14,7 +14,7 @@
   a:hover {
     color: #747bff;
   }
-  button {
+  .Nav button {
     background-color: #d42525;
     display: flex;
     justify-self: center;
@@ -23,8 +23,47 @@
     color: white;
     
   }
-  button p{
-    font-size: 15px;
+  
+  .mCard{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   flex-direction: column;
 
+  }
+  .Card{
+    width: 300px;
+    padding: 100px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    background-color: #fff;
+
+  }
+  .Card-info{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .Nav button{
+      width: auto;
+      font-size: 15px;
+      padding: 10px 30px;
+      margin: 10px 20px;
+      cursor: pointer;
+  }
+  .dot{
+    width: 30px;
+    cursor: pointer;
+  }
+  .Dbutton{
+     background-color: white;
+     border: none;
+     position: absolute;
+     top: 33%;
+     right: 43%;
+     
   }
 }
