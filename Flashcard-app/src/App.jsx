@@ -17,17 +17,18 @@ const handleAdd = () => {
     setNewAnswer('')
     setNewQuestion('')
 }
+console.log(Questions)
   return (
     <>
-       {Questions.map( (card, index) =>(
-        
+    
+       
         <Card 
           key = {Index}
-          Question={card.question}
-          Answer={card.answer}
+          Question={Questions[Index].question}
+          Answer={Questions[Index].answer}
           flip={flip}
         />    
-      ))} 
+    
       <button onClick={() => setFlip(!flip)}> 
         
         <p> Flip</p>
@@ -36,7 +37,7 @@ const handleAdd = () => {
         <input type = "text" value  = {newQuestion} placeholder='Add new Quesiton' onChange={(e) => setNewQuestion(e.target.value)}/>
         <input type = "text" value = {newAnswer} placeholder='Add new Answer' onChange={(e) => setNewAnswer(e.target.value)}/>
         <button onClick={() => handleAdd()}> Add</button>
-        <button onClick={() => {setIndex(Index+1)}}> next</button>
+        <button onClick={() => {Index+1<Questions.length?setIndex(Index+1):setIndex(Index)}}> next</button>
     </>
   )
 }
