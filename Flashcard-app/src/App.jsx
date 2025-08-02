@@ -4,6 +4,7 @@ import './index.css'
 import dotsIcon from './assets/dots.png';
 import NextButton from './assets/right.png';
 import PrevButton from './assets/left.png';
+import slash from './assets/slash.svg';
 const API_KEY = "o20vHz6ChWDsc3sJoDuGhgSJEhlnkQRnTROJyhvI";
 function App() {
    const [flip, setFlip] = useState(false)
@@ -16,7 +17,8 @@ function App() {
   const [Answers, setAnswers] = useState([])
   const fetchQuestions = async()=>{
   try{
-    const response = await fetch(`https://quizapi.io/api/v1/questions?apiKey=${API_KEY}&limit=100`);
+    const response = await fetch(`https://quizapi.io/api/v1/questions?apiKey=${API_KEY}&limit=20
+      `);
     const data = await response.json();
 console.log(data)
  const newQuestions = data.map(res=> res.question)
@@ -94,6 +96,8 @@ useEffect(()=>{
         <button onClick={() => {Index>0?setIndex(Index-1):setIndex(Index)}}>
           <img  className = "size-5" src={PrevButton}/>
         </button>
+         <p className='flex justify-center mt-8'>{Index+1}<img className='size-5' src={slash} /> {Questions.length}</p>
+    
         <button onClick={() => {Index+1<Questions.length?setIndex(Index+1):setIndex(Index)}}>
            <img src={NextButton} className='size-5 '/>
            </button>
